@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Pro Internet Manager</title>
+</head>
+<body>
+  <header>
+    <img src="icons/48.png" alt="" data-pim-icon>
+    <div>
+      <h1>Pro Internet Manager</h1>
+      <p>by Triwar Design · Firefox bridge</p>
+    </div>
+    <span id="connection" class="pill">checking</span>
+  </header>
+
+  <section>
+    <div class="label">Current tab</div>
+    <div id="pageUrl" class="url">—</div>
+    <button id="sendPage" class="primary">Download this page</button>
+  </section>
+
+  <section>
+    <div class="row">
+      <div class="label">Media and links</div>
+      <button id="scan" class="small">Scan</button>
+    </div>
+    <div id="media" class="list muted">Press Scan to collect video, audio and direct file links.</div>
+  </section>
+
+  <section>
+    <div class="label">Custom URL</div>
+    <div class="row">
+      <input id="customUrl" type="url" placeholder="https://example.com/file.zip">
+      <button id="sendCustom" class="small">Send</button>
+    </div>
+  </section>
+
+  <footer>
+    <button id="options" class="link">Settings</button>
+    <span id="status" class="status"></span>
+  </footer>
+
+  <script src="theme.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

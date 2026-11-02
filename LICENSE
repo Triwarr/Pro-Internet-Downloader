@@ -1,0 +1,10 @@
+Copyright (c) Triwar Design. All rights reserved.
+
+The source code in this repository is published for viewing and reference only.
+No permission is granted to use, copy, modify, merge, publish, distribute,
+sublicense or sell this source code or any part of it, or to build and
+distribute software from it, without prior written permission from Triwar Design.
+
+Using the released binaries of Pro Internet Manager as provided on the Releases
+page is permitted. Third-party components (yt-dlp, ffmpeg, Deno and the Rust
+crates listed in app/Cargo.lock) are covered by their own licenses.

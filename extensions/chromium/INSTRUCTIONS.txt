@@ -1,0 +1,26 @@
+Pro Internet Manager Bridge - Chromium extension (Chrome / Edge / Brave)
+by Triwar Design
+
+This extension is not in the Chrome Web Store. You load it as an "unpacked extension":
+
+1. Open your browser and go to:
+     Chrome:  chrome://extensions
+     Edge:    edge://extensions
+     Brave:   brave://extensions
+2. Turn on "Developer mode".
+   Chrome/Brave: toggle at the top right. Edge: toggle in the left menu.
+3. Click "Load unpacked".
+4. Choose THIS folder (chromium-extension, the folder this file is in).
+5. Start Pro Internet Manager. The extension talks to http://127.0.0.1:18500.
+
+Note:
+- Keep this folder. If you move or delete it, the extension stops working.
+- Chrome may show a warning at startup about extensions in developer mode.
+  That is normal for unpacked extensions; just dismiss it.
+- After updating the folder: click the round arrow (Reload) on chrome://extensions.
+
+Differences from the Firefox version:
+- Theme sync every 30 seconds (Chromium minimum) instead of 15.
+- "Take over browser downloads" cancels the download right after it starts;
+  it may briefly appear in the download list.
+- No support for Firefox containers (cookies come from the default profile).

@@ -1,0 +1,14 @@
+target/
+build-tmp/
+build.log
+*.exe
+*.zip
+*.xpi
+*.pdb
+*.env
+.env
+installer/_work/
+installer/_preview/
+installer/payload/
+installer/payload-src/
+installer/assets/background.jpg

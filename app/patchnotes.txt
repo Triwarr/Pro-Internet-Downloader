@@ -1,0 +1,29 @@
+Pro Internet Manager - patch notes
+==================================
+
+Version 0.2.5
+- Fixed: the app showed "Bridge not connected" while downloads from the browser extension did arrive. Pings and downloads from the Firefox and Chromium extensions now both count, and the status stays "Bridge connected" while the extension is active.
+- Browser extension 0.3.3: when the app is not running yet, the extension retries every few seconds, so the status turns "Bridge connected" shortly after the app starts.
+
+Version 0.2.4
+- Fixed: the browser bridge could stop answering ("Bridge not connected", extension stuck on "Sending...") while the app used a full CPU core. A browser connection that closed early made the local API loop forever; every connection is now handled separately and safely.
+- Starting the app while it is already running (also from the tray) now brings the running window to the front; no second copy stays open.
+- Options always opens on the General tab.
+- No more duplicate "ghost" tray icon after the app was closed unexpectedly.
+
+Version 0.2.3
+- The app now checks for updates once at every start and shows "A new update is available" inside the app (Update / Later). No Windows notifications.
+- After an update you see once what changed in the new version.
+- Updates are downloaded from the fixed download folder; download links are no longer shown in the app or written to the log.
+- Help > Updates is simpler: no URL field and no "Open update folder" button.
+- Settings and logs now live in their own folder: %APPDATA%\Pro Internet Downloader (logs\pim.log, config.json, pim_restyle.json, update.json, ytdlp_update.json). Existing settings are copied there once; the old folder is left untouched.
+
+Version 0.2.2
+- Live YouTube progress: speed, time left, "Downloading part 1/2" and "Merging" are shown while yt-dlp works.
+- Failed downloads show a short reason plus Retry and Open log buttons.
+- New "Test connection" (Options > Browser bridge and Help > Updates): checks the local browser bridge, the browser extension and the update server.
+- yt-dlp keeps itself up to date (once a day, only when no download is running), with "Update yt-dlp now" in Options > Streams. A failed update restores the previous yt-dlp.
+
+Version 0.2.1
+- Built-in patch updates: Help > Check for updates downloads a small patch, checks its size and sha256 and applies it with a backup and automatic rollback.
+- Help > Updates window with version check.

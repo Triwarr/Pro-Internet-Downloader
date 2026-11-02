@@ -1,6 +1,6 @@
 # Pro Internet Downloader
 
-Pro Internet Manager (by Triwar Design) is a fast, modern download manager for Windows. It downloads regular files and videos from sites such as YouTube, and picks up links straight from your browser with the "Pro Internet Manager Bridge" extension. This repository contains no source code. Downloads (installer and portable zip) are on the [Releases page](https://github.com/Triwarr/Pro-Internet-Downloader/releases).
+Pro Internet Manager (by Triwar Design) is a fast, modern download manager for Windows. It downloads regular files and videos from sites such as YouTube, and picks up links straight from your browser with the "Pro Internet Manager Bridge" extension. Downloads (installer and portable zip) are on the [Releases page](https://github.com/Triwarr/Pro-Internet-Downloader/releases). The source code is in this repository for viewing (see [Source code](#source-code) and [License](#license)).
 
 ## What it does
 
@@ -51,6 +51,29 @@ Download the latest version from the [Releases page](https://github.com/Triwarr/
 - No installer: unpack the zip to any folder and start `Pro Internet Manager.exe`. yt-dlp, ffmpeg and the JavaScript runtime are included.
 - Close a running Pro Internet Manager first (also from the system tray).
 - Settings and logs are stored in `%APPDATA%\Pro Internet Downloader`, the same place the installed version uses.
+
+## Source code
+
+| Folder | Contents |
+| --- | --- |
+| `app/` | The app (Rust, egui): `src/`, `Cargo.toml`, `Cargo.lock`, `build.rs`, `build-restyle.bat`, icons in `assets/` |
+| `extensions/firefox/` | Source of the Firefox extension "Pro Internet Manager Bridge" |
+| `extensions/chromium/` | Source of the Chromium extension (Chrome, Edge, Brave) |
+| `installer/` | Source of the Windows installer (`InstallerPIM.cs`, C# / WinForms) and its build script `build.ps1` |
+| `docs/screenshots/` | Screenshots used in this README |
+
+Build the app (Windows):
+1. Install Rust (stable, MSVC toolchain, via rustup) and the Visual Studio Build Tools with the Windows SDK.
+2. `cd app` and run `cargo build --release`, or run `build-restyle.bat`, which builds and copies the result to `Pro Internet Manager_restyle.exe` (log in `build.log`). Optional variables such as `VCVARS`, `PIM_SDKROOT` and `CARGO` are described at the top of the script.
+3. yt-dlp, ffmpeg and Deno are not in this repository. Put `yt-dlp.exe`, `ffmpeg.exe` and `deno.exe` next to the built exe.
+
+Update source: the published source contains placeholders for the update links (`https://example.invalid/...`), so a build from this repository does not find updates. To use your own update source, set `PIM_VERSION_URL` (link to a `version.txt`), and optionally `PIM_FALLBACK_VERSION_URL` and `PIM_DOWNLOAD_URL`, as environment variables when you build. The official releases have their own update source.
+
+Build the installer: run `installer\build.ps1` in PowerShell after building the app. Put `yt-dlp.exe`, `ffmpeg.exe`, `deno.exe`, `FFMPEG-NOTICE.txt` and `YT-DLP-NOTICE.txt` in `installer\payload-src` (or set `PIM_PAYLOAD_DIR`). The background picture of the official installer is not included; without `installer\assets\background.jpg` Setup uses a plain background.
+
+## License
+
+Copyright (c) Triwar Design. All rights reserved. The source code is published for viewing only; using, copying, modifying or distributing it requires written permission. See [LICENSE](LICENSE).
 
 ## Patch notes
 

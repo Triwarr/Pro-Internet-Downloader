@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Pro Internet Manager — Bridge settings</title>
+</head>
+<body class="options">
+  <header>
+    <img src="icons/48.png" alt="" data-pim-icon>
+    <div>
+      <h1>Pro Internet Manager</h1>
+      <p>by Triwar Design · Bridge settings</p>
+    </div>
+  </header>
+
+  <section>
+    <label class="label" for="port">Local API port</label>
+    <input id="port" type="number" min="1024" max="65535" value="18500">
+    <p class="muted small">Pro Internet Manager listens on 127.0.0.1. Default: 18500. The extension follows the app theme (<span id="themeName">Pro Lime</span>).</p>
+  </section>
+
+  <section>
+    <label class="check">
+      <input id="takeover" type="checkbox">
+      <span>Take over browser downloads</span>
+    </label>
+    <p class="muted small">When enabled, a download started in the browser is cancelled and sent to the download manager, including the current login cookies. Leave off if you prefer the right-click menu.</p>
+  </section>
+
+  <section>
+    <button id="save" class="primary">Save settings</button>
+    <button id="test" class="small">Test connection</button>
+    <span id="status" class="status"></span>
+  </section>
+  <script src="theme.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
