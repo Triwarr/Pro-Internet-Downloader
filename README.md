@@ -43,3 +43,11 @@ Download the installer from the Releases page and run it. The default location i
 - "Test connection" button for the browser bridge and the update link.
 - "Retry" button on failed downloads with a link to the log.
 - yt-dlp keeps itself up to date automatically (can be switched off in Options).
+
+### 0.2.3
+- The app checks for updates once at every start and shows an in-app prompt when a new version is available.
+- After an update, a window shows "This app has been updated" with a scrollable list of the fixes.
+- Update links are never shown anywhere in the app, its messages or its log.
+- The "Open update folder" button is removed from Help.
+- Logs and settings now live in their own `Pro Internet Downloader` folder in AppData. Existing settings are copied over once.
+- The uninstaller no longer touches the folder of the original Rust Download Manager.
