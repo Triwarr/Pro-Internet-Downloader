@@ -51,3 +51,9 @@ Download the installer from the Releases page and run it. The default location i
 - The "Open update folder" button is removed from Help.
 - Logs and settings now live in their own `Pro Internet Downloader` folder in AppData. Existing settings are copied over once.
 - The uninstaller no longer touches the folder of the original Rust Download Manager.
+
+### 0.2.4
+- Fixed the browser bridge sometimes showing "not connected": a dropped browser connection could freeze the local connection to the extension. Every connection now has its own time limit.
+- Starting the app while it is already running brings the existing window to the front instead of starting a second copy.
+- Options always opens on the General tab.
+- A leftover tray icon from an earlier session is cleaned up at start.
