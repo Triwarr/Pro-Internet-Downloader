@@ -12,6 +12,30 @@ Pro Internet Manager (by Triwar Design) is a fast, modern download manager for W
 - Built-in update check under Help, with automatic patch updates and rollback if something goes wrong.
 - A real log file so you can see why something failed.
 
+## Screenshots
+
+![Main window with the Pro Lime theme](docs/screenshots/main-pro-lime.png)
+*Main window (Pro Lime theme) with sample downloads. Screenshots are taken in preview mode, so no browser is connected.*
+
+| Midnight | Graphite | Azeroth |
+| --- | --- | --- |
+| ![Midnight theme](docs/screenshots/theme-midnight.png) | ![Graphite theme](docs/screenshots/theme-graphite.png) | ![Azeroth theme](docs/screenshots/theme-azeroth.png) |
+
+![Options, General tab](docs/screenshots/options-general.png)
+*Options > General: download folder, queue and log file.*
+
+![Options, Browser bridge tab](docs/screenshots/options-browser-bridge.png)
+*Options > Browser bridge: connection status and setup steps for Firefox and Chromium browsers.*
+
+![Help, Updates window](docs/screenshots/help-updates.png)
+*Help > Updates: installed version and update check.*
+
+![Update available prompt](docs/screenshots/update-available.png)
+*The in-app prompt when a new version is available (preview).*
+
+![Updated to a new version](docs/screenshots/updated.png)
+*After an update, the app shows once what changed.*
+
 ## Install
 
 Download the installer from the Releases page and run it. The default location is `C:\Program Files\Pro Internet Manager` (Windows asks for permission once). The extension is an optional component in the installer.
@@ -57,3 +81,6 @@ Download the installer from the Releases page and run it. The default location i
 - Starting the app while it is already running brings the existing window to the front instead of starting a second copy.
 - Options always opens on the General tab.
 - A leftover tray icon from an earlier session is cleaned up at start.
+
+### 0.2.5
+- Fixed the app showing "Bridge not connected" while downloads from the browser extension did arrive. Pings and downloads from the Firefox and Chromium extensions now both count, and the status stays "Bridge connected" while the extension is active.
